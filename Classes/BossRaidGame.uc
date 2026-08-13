@@ -288,6 +288,7 @@ function SpawnAdd()
         if (T != None)
             C.SetGrudge(T);
     }
+    log("BossRaid: add spawned - " $ M.Class $ " (" $ CountAdds() $ " on field)", 'BossRaidV1');
 }
 
 function CleanupAdds()
@@ -373,6 +374,7 @@ function RoundTick()
             else
                 Boss.AoEDamage = AoEDamage;
             Broadcast(Self, "TITAN WIND-UP - GET OUT OF THE BLAST ZONE!", 'CriticalEvent');
+            log("BossRaid: titan AoE blast - dmg " $ Boss.AoEDamage $ " radius " $ int(Boss.AoERadius), 'BossRaidV1');
             Boss.DoAoE();
         }
     }
